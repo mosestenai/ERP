@@ -1,0 +1,93 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+body{
+	font-size: 120%;
+	background-image:url("C:\Users\MOSES\Pictures\Screenshot_20191025-113914.png");
+}
+.header {
+	width: 50%;
+	margin: 50px auto 0px;
+	color: white;
+	background: #FF0066;
+	text-align: center;
+	border: 1px solid #B0CDE;
+	border-bottom:none;
+	border-radius:10px 10px 0px 0px;
+	padding:20px;
+}
+.logo img{
+	width: 60px;
+	
+}
+form, .content{
+	width:50%;
+	margin:0px auto;
+	padding: 20px;
+	border:1px solid #B0C4DE;
+	background:white;
+	border-radius:0px 0px 10px;
+}
+.input-group {
+	margin:10px 0px 10px 0px;
+}
+.input-group label {
+	display:block;
+	text-align:left;
+	margin:3px;
+}
+.input-group input {
+	height:30px;
+	width:93%;
+	padding:5px 10px;
+	font-size:16px;
+	border-radius:5px;
+	border:1px solid gray;
+}
+.container{
+	display:inline-block;
+	cursor:pointer;
+}
+.bar 1, .bar 2, .bar 3{
+	width:35px;
+	height:5px;
+	background-color:#333;
+	margin:6px 0;
+	transition:0.4s;
+}
+..change .bar 1{
+	-webkit-transform:
+	rotate(=45deg) translate(-9px,6px);
+	transform:rotate(-45deg)
+	translate(-9px,-6px);
+}
+.change .bar 2 {
+	opacity:0;
+}
+.change .bar 3 {
+	-webkit-transform:
+	rotate(45deg) translate(-8px,-8px);
+	transform: rotate(45deg)
+	translate(-8px, -8px)
+}
+.btn {
+	padding:10px;
+	font-size:15px;
+	color:white;
+	background:#00FF00;
+	border:none;
+	border-radius:5px;
+}
+.error {
+	width:92%;
+	margin:0px auto;
+	padding: 10px;
+	border: 1px solid #a94442;
+	color: #FF0000;
+	background: #f2dede;
+	border-radius:5px;
+	text-align:left;
+}
+	
+	
