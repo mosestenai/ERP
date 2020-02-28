@@ -7,7 +7,7 @@
   <meta http-equiv="refresh" content="30">
 </head>
 <body>
-<h1 align="middle"><font color="grey">LAIKIPIA <img src="C:\xampp\htdocs\registration\laikipia logo.PNG" width="50" height="50"/></font><font color="red">UNIVERSITY</font></h1>
+<h1 align="middle"><font color="grey">LAIKIPIA </font><font color="red">UNIVERSITY</font></h1>
 
   <div class="header"><h2>Login</h2>
   </div>
