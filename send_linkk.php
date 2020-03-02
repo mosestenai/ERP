@@ -1,12 +1,12 @@
 <?php
 
-if (isset($_POST["request-request-submit"])){
+if (isset($_POST["submit_email"])){
 
  $selector = bin2hex(random_bytes(8));
  $token = random_bytes(32);
 
 //link to the reset password page and token
- $url = "www.myset password page/create-new-password.php?selector=" . $selector ."$validator=" . bin2hex($token);
+ $url = "hotspice-tenai.herokuapp.com/create-new-password.php?selector=" . $selector ."$validator=" . bin2hex($token);
 //time at which the token expires
 $expires = date("U") + 1800;
 //including a file that contains database connection
@@ -53,10 +53,10 @@ $expires = date("U") + 1800;
  
  mail($to, $subject, $message, $headers);  //content of the email to be sent to the user
  
- header("Locations: ../reset pass.php?reset=success");//success message to be displayed in the reset password page
+ header("Locations: reset pass.php?reset=success");//success message to be displayed in the reset password page
  
 
 }else{
-header("Location: ../login.php");
+header("Location: login.php");
 }
 ?>

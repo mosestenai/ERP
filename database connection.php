@@ -5,8 +5,13 @@ $username = "";
 $email    = "";
 $errors = array(); 
 $minpassword = 7;
+$host="ec2-50-17-178-87.compute-1.amazonaws.com";
+$user="bhresqueirgmhk";
+$password="bd44da77895bfdf44dd435fdfec6c081e5cece3f477d06a713be1786b434a9a1";
+$dbname="d1jqghp24fspea";
+$port="5432";
 // connect to the database
-$db = mysqli_connect('localhost', 'root', '', 'registration');
+$db = "pgsql:host=" . $host . ";port=" . $port . ";dbname=" . $dbname .";user=" . $user . ";password=" . $password ;
 
 //check connection
 if (!$db){

@@ -6,8 +6,13 @@ session_start();
 $username = "";
 $email = "";
 $errors = array();
+$host="ec2-50-17-178-87.compute-1.amazonaws.com";
+$user="bhresqueirgmhk";
+$password="bd44da77895bfdf44dd435fdfec6c081e5cece3f477d06a713be1786b434a9a1";
+$dbname="d1jqghp24fspea";
+$port="5432";
 //connecting to the database
-$db = mysqli_connect('localhost' , 'root' , '' ,'registration');
+$db = "pgsql:host=" . $host . ";port=" . $port . ";dbname=" . $dbname .";user=" . $user . ";password=" . $password ;
 
 //checking if the user has entered both the username and password
  if (isset($_POST['login_user'])) {
