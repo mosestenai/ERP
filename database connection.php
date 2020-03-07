@@ -10,10 +10,19 @@ $user="bhresqueirgmhk";
 $password="bd44da77895bfdf44dd435fdfec6c081e5cece3f477d06a713be1786b434a9a1";
 $dbname="d1jqghp24fspea";
 $port="5432";
-// connect to the database
-$db = "pgsql:host=" . $host . ";port=" . $port . ";dbname=" . $dbname .";user=" . $user . ";password=" . $password ;
+try{
+// set DSN data source name
+$dsn = "pgsql:host=" . $host . ";port=" . $port . ";dbname=" . $dbname .";user=" . $user . ";password=" . $password ;
 
-//check connection
-if (!$db){
-die("Connection failed: ".mysqli_connect_error());
+//create a pdo instance
+$pdo = new PDO($dsn, $user ,$password);
+$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
+$pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
+//check connection
+catch (PDOExeption $e){
+echo 'Connection failed: ' . $e->getMessage();
+}
+
+?>
