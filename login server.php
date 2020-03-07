@@ -8,13 +8,7 @@ require 'database connection.php';
  if (isset($_POST['login_user'])) {
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $password = mysqli_real_escape_string($db, $_POST['password']);
-//displaying an error message when a fied is empty
-  if (empty($username)) {
-  	array_push($errors, "Username is required");
-  }
-  if (empty($password)) {
-  	array_push($errors, "Password is required");
-  }
+
 //checking in the database if the username and paaword exists
   if (count($errors) == 0) {
   	$password = md5($password);
@@ -25,7 +19,15 @@ require 'database connection.php';
   	  $_SESSION['username'] = $username;
   	  $_SESSION['success'] = "You are now logged in";
   	  header('location: index.php');
-  	}//displaying an error message if there password of username wrongly entered 
+  	}
+	//displaying an error message when a fied is empty
+  if (empty($username)) {
+  	array_push($errors, "Username is required");
+  }
+  if (empty($password)) {
+  	array_push($errors, "Password is required");
+  }
+  //displaying an error message if there password of username wrongly entered 
 	else {
   		array_push($errors, "Wrong username/password combination");
   	}
