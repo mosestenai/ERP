@@ -15,7 +15,7 @@ $expires = date("U") + 1800;
  $userEmail = $_POST["email"];
 
  $sql = "DELETE FROM pwdReset WHERE pwdResetEmail=?";//sql to delete any existing token
- $stmt = mysqli_stmt_init($db);//prepare statement
+ $stmt = mysqli_stmt_init($pdo);//prepare statement
  if (!mysqli_stmt_prepare($stmt, $sql)) {//error message if the sql command was unsuccesfull
  echo "There was an error!!";
  exit();
@@ -36,7 +36,7 @@ $expires = date("U") + 1800;
  }
  //closing the connection
  mysqli_stmt_close($stmt);
- mysqli_close($db);
+ mysqli_close($pdo);
  //sending email to the user
  $to = $userEmail;
  

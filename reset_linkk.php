@@ -20,7 +20,7 @@ if (isset($_POST["reset-linkk-submit"])){
   
   //sql statement to select the actual token
    $sql = "SELECT * FROM pwdReset WHERE pwdResetSelector=? AND pwdResetExpires >= ?";
-   $stmt = mysqli_stmt_init($db);//prepare statement
+   $stmt = mysqli_stmt_init($pdo);//prepare statement
    if (!mysqli_stmt_prepare($stmt, $sql)) {//error message if the sql command was unsuccesfull
    echo "There was an error!!";
    exit();
@@ -48,7 +48,7 @@ if (isset($_POST["reset-linkk-submit"])){
 	
 	$tokenEmail = $row['pwdRestEmail'];
 	$sql = "SELECT * FROM users WHERE email=?;";
-    $stmt = mysqli_stmt_init($db);//prepare statement
+    $stmt = mysqli_stmt_init($pdo);//prepare statement
     if (!mysqli_stmt_prepare($stmt, $sql)) {//error message if the sql command was unsuccesfull
     echo "There was an error!!";
     exit();
@@ -62,7 +62,7 @@ if (isset($_POST["reset-linkk-submit"])){
 	  }else{
 	  
 	  $sql = "UPDATE users SET password=? WHERE email=?";
-	  $stmt = mysqli_stmt_init($db);//prepare statement
+	  $stmt = mysqli_stmt_init($pdo);//prepare statement
       if (!mysqli_stmt_prepare($stmt, $sql)) {//error message if the sql command was unsuccesfull
       echo "There was an error!!";
       exit();
@@ -73,7 +73,7 @@ if (isset($_POST["reset-linkk-submit"])){
 	   mysqli_stmt_execute($stmt);
 	   
 	   $sql = "DELETE FROM pwdReset WHERE pwdResetEmail=?";//sql to delete any existing token
-       $stmt = mysqli_stmt_init($db);//prepare statement
+       $stmt = mysqli_stmt_init($pdo);//prepare statement
        if (!mysqli_stmt_prepare($stmt, $sql)) {//error message if the sql command was unsuccesfull
        echo "There was an error!!";
        exit();}
