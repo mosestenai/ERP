@@ -12,8 +12,8 @@ $dbname="d1jqghp24fspea";
 $port="5432";
 
 // database connection
-$db =  new mysqli($host, $port , $dbname , $user , $password);
 
+$db = mysqli_connect($host, $port , $dbname , $user , $password);
 
 
 ?>
